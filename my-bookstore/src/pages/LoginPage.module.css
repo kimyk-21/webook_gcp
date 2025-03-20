@@ -1,0 +1,78 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* 패딩과 테두리를 포함하여 전체 크기 계산 */
+}
+
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #898989;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.linkContainer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.linkText {
+  color: #898989;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.linkText:hover {
+  color: #555;
+}

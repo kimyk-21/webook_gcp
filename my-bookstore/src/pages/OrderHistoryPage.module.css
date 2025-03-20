@@ -1,0 +1,134 @@
+.container {
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  border: 1px solid #ddd; /* 통일된 테두리 색상 */
+  border-radius: 10px;
+  background-color: #f9f9f9; /* 일관된 배경 색상 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; /* 폰트 통일 */
+}
+
+.header {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333; /* 통일된 색상 */
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.purchaseList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.purchaseCard {
+  background-color: #fff;
+  border: 1px solid #ddd; /* 동일한 테두리 색상 */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+}
+
+.bookTitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold; /* 제목에 강조 효과 */
+}
+
+.purchaseCard p {
+  text-align: left;
+  margin: 5px 0;
+  color: #555; /* 본문 색상 */
+}
+
+.status {
+  font-weight: bold;
+  color: #4a90e2; /* 상태 색상 통일 */
+}
+
+.refundable {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.nonRefundable {
+  color: #e53e3e;
+  font-weight: bold;
+}
+
+.refundButton {
+  background-color: #898989;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* 버튼의 둥근 모서리 */
+  font-size: 1rem; /* 버튼 폰트 크기 통일 */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.refundButton:hover {
+  background-color: #555; /* 버튼 호버 효과 */
+}
+
+.purchaseCard p:last-child {
+  margin-bottom: 0; /* 마지막 항목의 여백 제거 */
+}
+
+/* 추가 버튼과 액션 버튼들 */
+.purchaseCard button {
+  background-color: #898989;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.purchaseCard button:hover {
+  background-color: #555; /* 호버 효과 */
+}
+
+.purchaseCard button:focus {
+  outline: none;
+}
+
+/* 총 합계 스타일 */
+.totalPrice {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: right; /* 오른쪽 정렬 */
+}
+
+/* 구매 내역을 비웠을 때 메시지 */
+.emptyMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* 삭제 버튼 */
+.deleteButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.deleteButton:hover {
+  background-color: #ff1a1a;
+}

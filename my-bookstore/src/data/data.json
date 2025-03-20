@@ -1,0 +1,202 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "소년이 온다",
+      "author": "한강",
+      "publisher": "창비",
+      "year": 2014,
+      "price": 15000,
+      "stock": 10,
+      "genres": ["역사"]
+    },
+    {
+      "id": 2,
+      "title": "작별하지 않는다",
+      "author": "한강",
+      "publisher": "문학동네",
+      "year": 2021,
+      "price": 16800,
+      "stock": 5,
+      "genres": ["역사"]
+    },
+    {
+      "id": 3,
+      "title": "재와 물거품",
+      "author": "김청귤",
+      "publisher": "안전가옥",
+      "year": 2023,
+      "price": 13000,
+      "stock": 8,
+      "genres": ["로맨스", "판타지"]
+    },
+    {
+      "id": 4,
+      "title": "칵테일, 러브, 좀비",
+      "author": "조예은",
+      "publisher": "안전가옥",
+      "year": 2023,
+      "price": 13000,
+      "stock": 12,
+      "genres": ["공포", "스릴러"]
+    },
+    {
+      "id": 5,
+      "title": "홍학의 자리",
+      "author": "정해연",
+      "publisher": "엘릭시르",
+      "year": 2021,
+      "price": 14000,
+      "stock": 6,
+      "genres": ["스릴러", "추리"]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "홍길동",
+      "gender": "남성",
+      "dob": "1990-05-14",
+      "phone": "010-1234-5678",
+      "email": "hong@example.com",
+      "address": "서울시 강남구 테헤란로 123",
+      "password": "pw123",
+      "interests": ["프로그래밍", "웹 개발"],
+      "paymentInfo": {
+        "bankAccount": {
+          "bankName": "국민은행",
+          "accountNumber": "123-456-789012",
+          "holderName": "홍길동"
+        },
+        "creditCard": {
+          "cardNumber": "1111-2222-3333-4444",
+          "expiryDate": "12/27",
+          "holderName": "홍길동"
+        }
+      },
+      "reviews": [
+        {
+          "bookId": 1,
+          "rating": 5,
+          "comment": "정말 꼭 읽어야하는 책이에요! 노벨문학상을 원서로 읽을 수 있습니다."
+        },
+        {
+          "bookId": 2,
+          "rating": 5,
+          "comment": "정말 꼭 읽어야하는 책이에요! 노벨문학상을 원서로 읽을 수 있습니다."
+        },
+        {
+          "bookId": 3,
+          "rating": 4,
+          "comment": "우리가 알던 인어공주와는 또 다른 이야기 같아요."
+        }
+      ],
+      "purchaseHistory": [
+        {
+          "bookId": 2,
+          "date": "2025-01-01",
+          "quantity": 1,
+          "price": 30000
+        }
+      ],
+      "coupons": [
+        {
+          "code": "DISCOUNT10",
+          "discount": 10,
+          "expiryDate": "2025-12-31",
+          "description": "10% 할인 쿠폰"
+        },
+        {
+          "code": "DISCOUNT20",
+          "discount": 20,
+          "expiryDate": "2025-06-30",
+          "description": "20% 할인 쿠폰"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "김영희",
+      "gender": "여성",
+      "dob": "1985-08-25",
+      "phone": "010-9876-5432",
+      "email": "kim@example.com",
+      "address": "경기도 성남시 분당구 정자동 456",
+      "password": "pw456",
+      "interests": ["데이터 분석", "AI"],
+      "paymentInfo": {
+        "bankAccount": {
+          "bankName": "신한은행",
+          "accountNumber": "987-654-321098",
+          "holderName": "김영희"
+        },
+        "creditCard": {
+          "cardNumber": "5555-6666-7777-8888",
+          "expiryDate": "08/26",
+          "holderName": "김영희"
+        }
+      },
+      "reviews": [
+        {
+          "bookId": 5,
+          "rating": 5,
+          "comment": "스포일러를 보지 않고 최고의 반전 소설을 경험하세요."
+        },
+        {
+          "bookId": 2,
+          "rating": 4,
+          "comment": "노벨문학상을 원서로 읽을 수 있다니.."
+        },
+        {
+          "bookId": 4,
+          "rating": 4,
+          "comment": "단편집이라 짧게 읽기 좋습니다."
+        }
+      ],
+      "purchaseHistory": [
+        {
+          "bookId": 5,
+          "date": "2025-01-05",
+          "quantity": 2,
+          "price": 28000
+        }
+      ],
+      "coupons": [
+        {
+          "code": "DISCOUNT5",
+          "discount": 5,
+          "expiryDate": "2025-06-30",
+          "description": "5% 할인 쿠폰"
+        }
+      ]
+    }
+  ],
+  "cart": [
+    {
+      "userId": 1,
+      "items": [
+        {
+          "bookId": 1,
+          "quantity": 1
+        },
+        {
+          "bookId": 3,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "items": [
+        {
+          "bookId": 4,
+          "quantity": 1
+        },
+        {
+          "bookId": 5,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}

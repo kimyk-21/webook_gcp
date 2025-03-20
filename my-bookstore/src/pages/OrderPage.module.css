@@ -1,0 +1,118 @@
+.container {
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.header {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.itemDetails {
+  display: flex;
+  justify-content: space-between; /* 좌측, 우측 정렬 */
+  margin-top: 10px;
+}
+
+.quantity {
+  font-size: 1rem;
+}
+
+.price {
+  font-size: 1rem;
+}
+
+.orderForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.submitButton,
+.cancelButton {
+  padding: 10px 20px;  /* 버튼 크기 조정 */
+  border-radius: 5px;
+  font-size: 1.1rem;  /* 폰트 크기 줄임 */
+  cursor: pointer;
+}
+
+.submitButton {
+  background-color: #898989;
+  color: white;
+  border: none;
+}
+
+.submitButton:hover {
+  background-color: #555;
+}
+
+.cancelButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.cancelButton:hover {
+  background-color: #d32f2f;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  gap: 10px; /* 버튼 사이 간격 */
+}
+
+.paymentStatus {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.paymentStatus.error {
+  color: #ff4d4d;
+}

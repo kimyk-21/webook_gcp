@@ -1,0 +1,149 @@
+.container {
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #f9f9f9; /* 전체 배경 색을 일관되게 유지 */
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif; /* 폰트 통일 */
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* 제목의 색상 조정 */
+  margin-bottom: 20px;
+  text-align: center; /* 제목 중앙 정렬 */
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;  /* 수직 정렬 */
+  justify-content: space-between;  /* 각 항목을 균등하게 분배 */
+  border: 1px solid #ddd;
+  padding: 15px; /* 여백을 늘려서 깔끔하게 정리 */
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #ffffff; /* 흰 배경으로 강조 */
+}
+
+.cartItem p {
+  margin: 0;  /* 기본 마진 제거 */
+  padding: 0;  /* 기본 패딩 제거 */
+  text-align: left;
+  flex-grow: 1;  /* 나머지 공간을 텍스트에 할당 */
+  font-size: 1rem; /* 텍스트 크기 통일 */
+}
+
+.cartItem p:nth-child(2),
+.cartItem p:nth-child(3) {
+  flex-basis: 30%;  /* 도서명과 수량의 너비를 30%로 설정 */
+}
+
+.cartItem p:nth-child(4) {
+  flex-basis: 30%;  /* 가격의 기본 너비 설정 */
+  text-align: right;  /* 가격을 우측 정렬 */
+}
+
+.cartItem input[type="checkbox"] {
+  margin: 0;  /* 체크박스의 여백을 없애기 */
+  padding: 0;  /* 체크박스의 패딩을 없애기 */
+  margin-right: 10px;  /* 체크박스와 텍스트 간의 간격 */
+}
+
+.removeButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.removeButton:hover {
+  background-color: #ff1a1a;
+}
+
+.emptyMessage {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.selectAllContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectAllLeft {
+  display: flex;
+  align-items: center;
+}
+
+.selectAllRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.selectAllContainer input {
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buySelectedButton,
+.buyAllButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #898989;
+  color: white;
+  border-radius: 5px;
+}
+
+.buySelectedButton:hover,
+.buyAllButton:hover {
+  background-color: #555;
+}
+
+.buySelectedButton {
+  margin-right: 10px; /* Adds space between the two buttons */
+}
+
+.deleteCartButton {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.deleteCartButton:hover {
+  background-color: #e55d4d;
+}
+
+.totalPrice {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 5px;
+  margin-left: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}

@@ -1,0 +1,100 @@
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bookImage {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.addToCartButton,
+.goToCartButton {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+}
+
+.goToCartButton {
+  background-color: #28a745;
+}
+
+.reviewsSection {
+  margin-top: 30px;
+}
+
+.reviewForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewForm label {
+  margin-bottom: 10px;
+}
+
+.reviewForm select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submitReviewButton {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #898989;
+  color: white;
+}
+
+.addToCartButton,
+.buyNowButton {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.addToCartButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.buyNowButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.reviewForm textarea {
+  width: 100%;
+  padding: 0px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none; /* 크기 조절 비활성화 */
+  height: 100px; /* 고정된 높이 설정 */
+}
+
+.reviewsSection ul {
+  list-style: none; /* 리스트의 기본 동그라미 제거 */
+  padding: 0; /* 리스트 좌측 여백 제거 */
+}
+
+.reviewsSection ul li {
+  margin-bottom: 10px; /* 각 리뷰 간격 설정 */
+}

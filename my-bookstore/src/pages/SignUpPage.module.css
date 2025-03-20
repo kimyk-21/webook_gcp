@@ -1,0 +1,94 @@
+.signupContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputContainer {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.emailContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 입력 필드와 버튼 사이의 간격 */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.emailContainer input {
+  flex-grow: 1; /* 이메일 입력 필드가 가능한 한 넓어짐 */
+}
+
+.checkEmailButton {
+  background-color: #898989;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 10px 15px; /* 상하 패딩은 10px, 좌우 패딩은 15px로 설정 */
+  white-space: nowrap;  /* 버튼 텍스트가 줄 바꿈 되지 않도록 */
+  width: auto;  /* 버튼의 너비를 자동으로 설정 */
+}
+
+.checkEmailButton:hover {
+  background-color: #555;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #898989;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.success {
+  color: #4caf50; /* 연두색 */
+}
+
+.errorText {
+  color: #ff4d4d; /* 빨간색 */
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.successText {
+  color: #4caf50; /* 연두색 */
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
