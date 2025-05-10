@@ -2,25 +2,17 @@
   padding: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 10px;
   min-height: 100vh;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.header {
+.title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
-}
-
-label {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
-  display: block;
 }
 
 .select, .textarea {
@@ -29,14 +21,14 @@ label {
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 24px;
   resize: none; /* 크기 조정 불가 */
 }
 
 .submitButton {
   width: 100%;
   padding: 10px;
-  font-size: 1.1rem;
+  font-size: 16px;
   color: white;
   background-color: #898989;
   border: none;
@@ -54,3 +46,43 @@ label {
   font-size: 14px;
   color: red;
 }
+
+  /* 반응형 스타일 */
+  @media (max-width: 520px) {
+    .container {
+      width: 90%; /* 화면 크기에 맞춰 자동 조정 */
+      max-width: 350px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+  
+    .submitButton {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .message {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .container {
+      width: 95%;
+      max-width: 300px;
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    .submitButton {
+      font-size: 13px;
+      padding: 7px;
+    }
+
+    .message {
+      font-size: 12px;
+    }
+  }

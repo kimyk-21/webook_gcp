@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./CartPage.module.css";
 
-const BASE_URL = "http://3.94.201.0:8080"; // 백엔드 URL
+const BASE_URL = "https://swims.p-e.kr"; // 백엔드 URL
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -176,7 +176,7 @@ const CartPage = () => {
           <div className={styles.selectAllContainer}>
             <div className={styles.selectAllLeft}>
               <input type="checkbox" checked={isSelectAll} onChange={handleSelectAll} />
-              <label>전체 선택</label>
+              <label className={styles.allSelect}>전체 선택</label>
             </div>
             <div className={styles.selectAllRight}>
               <button className={styles.deleteCartButton} onClick={handleRemoveFromCart}>
@@ -191,8 +191,8 @@ const CartPage = () => {
                 checked={selectedItems.includes(item.book.bookId)}
                 onChange={() => handleSelectItem(item.book.bookId)}
               />
-              <p><strong>도서명:</strong> {item.book.title}</p>
-              <p>
+              <p className={styles.bookname}><strong>도서명:</strong> {item.book.title}</p>
+              <p className={styles.bookquantity}>
                 <strong>수량:</strong>
                 <input
                   type="number"
@@ -202,7 +202,7 @@ const CartPage = () => {
                   className={styles.quantityInput}
                 />
               </p>
-              <p><strong>가격:</strong> {item.book.price * item.quantity}원</p>
+              <p className={styles.bookprice}><strong>가격:</strong> {item.book.price * item.quantity}원</p>
             </div>
           ))}
           <div className={styles.actions}>

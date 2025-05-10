@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./HomePage.module.css";
 
-const BASE_URL = "http://3.94.201.0:8080/api/books"; // 백엔드 API 주소
-const RATING_URL = "http://3.94.201.0:8080/ratings/average"; // 평점 평균 API 주소
+const BASE_URL = "https://swims.p-e.kr/api/books"; // 백엔드 API 주소
+const RATING_URL = "https://swims.p-e.kr/ratings/average"; // 평점 평균 API 주소
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
+      <main>
         {/* 장르 탭 */}
         <div className={styles.genreTabs}>
           {["all", "고전", "동화", "디스토피아", "전후소설", "풍자"].map((genre) => (
@@ -74,24 +74,32 @@ const HomePage = () => {
             books
               .filter((book) => selectedGenre === "all" || book.genre === selectedGenre)
               .map((book, index) => (
-                <div key={book.id || `book-${index}`} className={styles.bookItem} onClick={() => handleBookClick(book.bookId)}>
+                <div 
+                  key={book.id || `book-${index}`} 
+                  className={styles.bookItem} 
+                  onClick={() => handleBookClick(book.bookId)}
+                >
+                  {/* 도서 이미지 */}
                   <img 
-                    src={`http://3.94.201.0:8080${book.imageUrl}`} 
+                    src={`https://swims.p-e.kr${book.imageUrl}`} 
                     alt={book.title} 
                     className={styles.bookImage} 
-                    onError={(e) => e.target.src = "/fallback-image.jpg"} // 기본 이미지 표시
+                    onError={(e) => e.target.src = "/fallback-image.jpg"} 
                   />
-                  <h3>{book.title}</h3>
-                  <p>{book.author}</p>
-                  <p>{book.price}원</p>
-                  {/*
-                    <p>저자: {book.author}</p>
-                    <p>출판사: {book.publisher}</p>
-                    <p>가격: {book.price}원</p>
-                    <p>장르: {book.genre}</p>
-                    */}
-                  <p>평균 평점: {averageRatings[book.bookId] ? averageRatings[book.bookId].toFixed(1) : "없음"}</p>
-                  <p>리뷰: {book.commentCount}개</p>
+                  
+                  {/* 도서 정보 */}
+                  <div className={styles.bookInfo}>
+                    <div className={styles.bookTitle}>{book.title}</div>
+                    <div className={styles.bookMeta}>{book.author} | {book.publisher}</div>
+                    <div className={styles.bookPrice}>
+                      {book.price}원
+                      <span className={styles.bookRating}>
+                        {averageRatings[book.bookId] ? 
+                          `⭐️${averageRatings[book.bookId].toFixed(1)}점` : "⭐️0"} 
+                        ({book.commentCount}개)
+                      </span>
+                    </div>
+                  </div>
                 </div>
               ))
           ) : (

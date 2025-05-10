@@ -38,7 +38,7 @@ const RefundPage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>환불 요청</h1>
+      <h2 className={styles.title}>환불 요청</h2>
       <p>구매 ID: {id}</p>
 
       <form className={styles.form} onSubmit={handleSubmit}>

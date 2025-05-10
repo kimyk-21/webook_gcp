@@ -1,10 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../App";
 import axios from 'axios';
 import styles from "./Header.module.css";
 
-const BASE_URL = "http://3.94.201.0:8080"; // 백엔드 URL 맞게 설정
+const BASE_URL = "https://swims.p-e.kr"; // 백엔드 URL 맞게 설정
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated, userInfo } = useContext(AuthContext);
@@ -14,6 +14,7 @@ const Header = () => {
   const [searchHistory, setSearchHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null); // 메뉴 영역을 감싸는 ref 생성
 
   useEffect(() => {
     console.log("현재 로그인 상태:", isAuthenticated);
@@ -30,6 +31,22 @@ const Header = () => {
       setSearchHistory([]);
     }
   }, [isAuthenticated, userInfo]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false); // 메뉴 외부 클릭 시 닫기
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   const handleLogout = () => {
     localStorage.clear(); // 모든 로컬스토리지 삭제
@@ -89,7 +106,10 @@ const handleSearchSubmit = async (e) => {
     if (isAuthenticated && userInfo) {
       // 검색 기록 저장
       await axios.post(`${BASE_URL}/api/search-history/${userInfo.id}`, null, { params: { keyword: searchQuery } });
-      setSearchHistory((prev) => [...new Set([searchQuery, ...prev])]);
+      if (searchQuery.trim() !== "") {
+        setSearchHistory((prev) => [...new Set([searchQuery, ...prev])]);
+      }
+      
     }
   } catch (error) {
     console.error("검색 오류:", error);
@@ -127,7 +147,7 @@ const handleDeleteHistory = async (keyword) => {
     <header className={styles.header}>
       <h1 className={styles.title}>
         <Link to="/" className={styles.titleLink}>
-          도서 쇼핑몰
+          WEbook
         </Link>
       </h1>
       <form className={styles.searchBar} onSubmit={handleSearchSubmit}>
@@ -188,11 +208,11 @@ const handleDeleteHistory = async (keyword) => {
           )}
         </div>
         <button type="submit" className={styles.searchButton}>
-          🔍
+          검색
         </button>
       </form>
       <button className={styles.hamburgerMenu} onClick={toggleMenu}>☰</button>
-      <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
+      <nav ref={menuRef} className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
         <ul className={styles.navList}>
           {isAuthenticated ? (
             <>

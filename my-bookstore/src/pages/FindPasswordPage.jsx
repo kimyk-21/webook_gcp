@@ -17,7 +17,7 @@ function FindPasswordPage() {
     }
     try {
       const response = await axios.post(
-        'http://3.94.201.0:8080/api/password_such',
+        'https://swims.p-e.kr/api/password_such',
         null,
         { params: { email } }
       );
@@ -38,7 +38,7 @@ function FindPasswordPage() {
     }
     try {
       const response = await axios.post(
-        'http://3.94.201.0:8080/api/verify-code',
+        'https://swims.p-e.kr/api/verify-code',
         null,
         { params: { email, authenticationCode: code } }
       );
@@ -54,7 +54,7 @@ function FindPasswordPage() {
 
   return (
     <div className={styles.container}>
-      <h2>비밀번호 찾기</h2>
+      <h2 className={styles.title}>비밀번호 찾기</h2>
       <input
         type="email"
         placeholder="이메일 입력"

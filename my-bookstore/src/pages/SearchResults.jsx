@@ -3,8 +3,8 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./SearchResults.module.css";
 
-const BASE_URL = "http://3.94.201.0:8080";
-const RATING_URL = "http://3.94.201.0:8080/ratings/average"; // 평점 평균 API
+const BASE_URL = "https://swims.p-e.kr";
+const RATING_URL = "https://swims.p-e.kr/ratings/average"; // 평점 평균 API
 
 const SearchResults = () => {
   const [userInfo, setUserInfo] = useState(null); // 사용자 정보 상태 추가
@@ -169,6 +169,7 @@ const SearchResults = () => {
             </select>
             <input
               type="text"
+              className={styles.input}
               placeholder="추가 검색어 입력"
               value={filters.additionalQuery}
               onChange={(e) => handleFilterChange("additionalQuery", e.target.value)}

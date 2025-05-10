@@ -4,6 +4,51 @@
   margin: 0 auto;
 }
 
+.submitRatingButton,
+.submitReviewButton {
+  padding: 10px 15px;
+  background-color: #898989;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.editReviewButton,
+.removeReviewButton {
+  padding: 5px 10px; /* 패딩 줄이기 */
+  margin-left: 5px;
+  font-size: 12px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: auto; /* 버튼 너비 최소화 */
+  white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 */
+}
+
+.editReviewButton {
+  background-color: #b6b6b6;
+}
+.editReviewButton:hover {
+  background-color: #898989;
+}
+.removeReviewButton {
+  background-color: #ff4d4d;
+}
+.removeReviewButton:hover {
+  background-color: #ff1a1a;
+}
+
+.reviewButtons {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .bookImage {
   width: 100%;
   max-width: 250px;
@@ -11,19 +56,31 @@
   object-fit: cover;
 }
 
+.buttons {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .addToCartButton,
-.goToCartButton {
-  margin: 10px 5px;
+.buyNowButton {
+  margin: 5px;
+  margin-left: 0px;
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
   color: white;
+  width: 50%;
 }
 
-.goToCartButton {
+.addToCartButton {
+  background-color: #007bff;
+}
+
+.buyNowButton {
   background-color: #28a745;
 }
 
@@ -52,31 +109,10 @@
 .submitReviewButton {
   margin-top: 10px;
   padding: 10px 15px;
-  font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
   background-color: #898989;
-  color: white;
-}
-
-.addToCartButton,
-.buyNowButton {
-  margin: 10px 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-}
-
-.addToCartButton {
-  background-color: #007bff;
-  color: white;
-}
-
-.buyNowButton {
-  background-color: #28a745;
   color: white;
 }
 

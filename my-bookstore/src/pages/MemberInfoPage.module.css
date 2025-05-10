@@ -12,7 +12,9 @@
 }
 
 .h3 {
-  font-size: 24px;
+  font-size: 19px;
+  margin: 0px;
+  margin-bottom: 20px;
 }
 
 .infoList {
@@ -22,7 +24,7 @@
 }
 
 .commentItem {
-  margin-bottom: 10px; /* 항목 간 간격 설정 */
+  margin-top: 10px; /* 항목 간 간격 설정 */
 }
 
 
@@ -35,11 +37,11 @@
 
 /* 섹션별 박스 스타일 */
 .infoBox, .interestsBox, .reviewsBox, .paymentBox {
-  margin-bottom: 30px;
+  margin-top: 20px;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
 }
 
 /* 정보 항목 스타일 */
@@ -57,26 +59,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .interestItem span {
   font-size: 1rem;
-}
-
-/* 삭제 버튼 스타일 */
-.deleteButton {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
-
-.deleteButton:hover {
-  background-color: #ff1a1a;
 }
 
 /* 관심 분야 추가 입력 및 버튼 */
@@ -91,7 +78,6 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
 .interestItem button {
@@ -139,9 +125,16 @@
   font-size: 0.9rem;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.buttons {
+  text-align: center;
 }
 
 .toggleButton:hover {
@@ -241,4 +234,87 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   background-color: #ffffff;
+}
+
+.input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* 패딩과 테두리를 포함하여 전체 크기 계산 */
+}
+
+  /* 반응형 스타일 */
+  @media (max-width: 720px) {
+    .container {
+      width: 80%; /* 화면 크기에 맞춰 자동 조정 */
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+  
+    .input {
+      font-size: 14px; /* 작은 화면에서 입력 필드 폰트 크기 조정 */
+      padding: 10px;
+    }
+  
+    .button {
+      font-size: 15px;
+      padding: 9px;
+    }
+  
+    .linkContainer {
+      font-size: 14px;
+    }
+  }
+
+@media (max-width: 520px) {
+  .container {
+    width: 90%; /* 화면 크기에 맞춰 자동 조정 */
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .input {
+    font-size: 13px; /* 작은 화면에서 입력 필드 폰트 크기 조정 */
+    padding: 8px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .linkContainer {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .linkText {
+    font-size: 12px;
+  }
 }

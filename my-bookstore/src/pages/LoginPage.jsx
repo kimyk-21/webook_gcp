@@ -17,7 +17,7 @@ const LoginPage = () => {
     console.log("로그인 시 비밀번호:", password);
 
     try {
-      const response = await axios.post("http://3.94.201.0:8080/api/login", {
+      const response = await axios.post("https://swims.p-e.kr/api/login", {
         userId,
         password,
       });
@@ -56,42 +56,44 @@ const LoginPage = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>로그인</h2>
       <form className={styles.form} onSubmit={handleLogin}>
-        <label className={styles.label}>
-          아이디
+      <label className={styles.label}>
+          <div className={styles.loginText}>이메일</div>
           <input
             type="text"
+            placeholder="이메일을 입력하세요"
             className={styles.input}
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           />
         </label>
         <label className={styles.label}>
-          비밀번호
+          <div className={styles.loginText}>비밀번호</div>
           <input
             type="password"
+            placeholder="비밀번호를 입력하세요"
             className={styles.input}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        {error && <p className={styles.error}>{error}</p>}
+        {error && <div className={styles.error}>{error}</div>}
         <button type="submit" className={styles.button}>
           로그인
         </button>
       </form>
       <div className={styles.linkContainer}>
-        <p>
+        <div className={styles.guide}>
           아직 회원이 아니신가요?{" "}
           <span className={styles.linkText} onClick={() => navigate("/signup")}>
             회원가입
           </span>
-        </p>
-        <p>
+        </div>
+        <div className={styles.guide}>
           <span>비밀번호를 잊으셨나요? </span>
           <span className={styles.linkText} onClick={() => navigate("/find-password")}>
             비밀번호 찾기
           </span>
-        </p>
+        </div>
       </div>
     </div>
   );

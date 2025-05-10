@@ -8,14 +8,14 @@
   background-color: #f9f9f9;
 }
 
-h2 {
-  font-size: 1.5rem;
+.title {
+  font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .inputContainer {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -26,16 +26,16 @@ h2 {
   gap: 10px; /* 입력 필드와 버튼 사이의 간격 */
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="date"],
-input[type="number"],
+.name,
+.email,
+.password,
+.phoneNumber,
+.birthDate,
+.address,
+.age,
 select {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
@@ -62,15 +62,18 @@ select {
   background-color: #555;
 }
 
-button {
+.checkEmailButton,
+.signupButton {
   padding: 10px 15px;
   background-color: #898989;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+}
+
+.signupButton {
   width: 100%;
-  margin-top: 10px;
 }
 
 button:hover {
@@ -91,4 +94,52 @@ button:hover {
   color: #4caf50; /* 연두색 */
   font-size: 0.9rem;
   margin-top: 5px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 520px) {
+  .signupContainer {
+    width: 90%;
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  input,
+  select {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .checkEmailButton, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .signupContainer {
+    width: 95%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .checkEmailButton, button {
+    font-size: 13px;
+    padding: 7px;
+  }
 }

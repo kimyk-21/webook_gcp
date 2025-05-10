@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./OrderPage.module.css";
 
+const BASE_URL = "https://swims.p-e.kr"
+
 const OrderPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -38,7 +40,9 @@ const OrderPage = () => {
       // 쿠폰 조회 API 호출
       const fetchCoupons = async () => {
         try {
-          const response = await axios.get(`/coupons/user/${user.id}`);
+          const response = await axios.get(`${BASE_URL}/coupons/user/${user.id}`, {
+            withCredentials: true
+          });
           console.log("받아온 쿠폰 데이터:", response.data); // 쿠폰 데이터 확인
       
           const now = new Date();
@@ -115,7 +119,7 @@ const OrderPage = () => {
     try {
       // 1️⃣ 주문 생성 요청
       const orderResponse = await axios.post(
-        `/orders/create`,
+        `${BASE_URL}/orders/create`,
         {
           totalPrice: calculateTotalPrice(),
           couponCode: selectedCoupon ? selectedCoupon.code : null,
@@ -123,7 +127,7 @@ const OrderPage = () => {
             bookId: item.bookId,
             quantity: item.quantity,
           })),
-          receiver: receiver,  // 받는 사람
+          //receiver: receiver,  // 받는 사람
           address: address,    // 주소 추가
         },
         { params: { userId: userData.id }, withCredentials: true }
@@ -149,7 +153,7 @@ const OrderPage = () => {
   
       // 2️⃣ 결제 요청
       const paymentResponse = await axios.post(
-        `/payments/pay_process`,
+        `${BASE_URL}/payments/pay_process`,
         null, // Request Body 없음 (모든 데이터는 쿼리 파라미터로 전달됨)
         {
           params: {

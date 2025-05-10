@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../App"; // AuthContext 가져오기
 import styles from "./BookDetailPage.module.css";
 
-const BASE_URL = "http://3.94.201.0:8080"; 
+const BASE_URL = "https://swims.p-e.kr"; 
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -207,25 +207,25 @@ const BookDetailPage = () => {
     <div className={styles.container}>
       <h2>{book.title}</h2>
       <img 
-        src={`http://3.94.201.0:8080${book.imageUrl}`} 
+        src={`https://swims.p-e.kr${book.imageUrl}`} 
         alt={book.title} 
         className={styles.bookImage} 
         onError={(e) => e.target.src = "/fallback-image.jpg"} // 기본 이미지 표시
       />
       <p>저자: {book.author}</p>
       <p>출판사: {book.publisher}</p>
-      <p>출판년도: {book.year}</p>
+      {/* <p>출판년도: {book.year}</p> */}
       <p>가격: {book.price}원</p>
-      <p>{book.stock > 0 ? `재고 있음 (${book.stock}개)` : "재고 없음"}</p>
+      {/* <p>{book.stock > 0 ? `재고 있음 (${book.stock}개)` : "재고 없음"}</p> */}
       <p>장르: {book?.genre || "정보 없음"}</p>
-
+      <div className={styles.buttons}>
       <button className={styles.addToCartButton} onClick={handleAddToCart}>
         장바구니 담기
       </button>
       <button className={styles.buyNowButton} onClick={handleBuyNow}>
         바로 구매하기
       </button>
-
+      </div>
       <div className={styles.ratingSection}>
         <h3>평점</h3>
         <div>
@@ -251,14 +251,21 @@ const BookDetailPage = () => {
         {reviews.length > 0 ? (
           <ul>
             {reviews.map(review => (
+              
               <li key={review.commentId}>
+                <div className={styles.reviewButtons}> 
+                <div>
                 <strong>{review.user.name}:</strong> {review.content}
+                </div>
+                <div>
                 {review.user.id === userInfo?.id && (
                   <>
-                    <button onClick={() => handleUpdateComment(review.commentId, prompt("수정할 내용을 입력하세요:", review.content))}>수정</button>
-                    <button onClick={() => handleDeleteComment(review.commentId)}>삭제</button>
+                    <button className={styles.editReviewButton} onClick={() => handleUpdateComment(review.commentId, prompt("수정할 내용을 입력하세요:", review.content))}>수정</button>
+                    <button className={styles.removeReviewButton} onClick={() => handleDeleteComment(review.commentId)}>삭제</button>
                   </>
                 )}
+                </div>
+                </div>
               </li>
             ))}
           </ul>

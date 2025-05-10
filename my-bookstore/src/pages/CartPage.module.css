@@ -2,7 +2,7 @@
   padding: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  background-color: #f9f9f9; /* 전체 배경 색을 일관되게 유지 */
+  background-color: #fff; /* 전체 배경 색을 일관되게 유지 */
   min-height: 100vh;
   font-family: 'Arial', sans-serif; /* 폰트 통일 */
 }
@@ -15,6 +15,10 @@
   text-align: center; /* 제목 중앙 정렬 */
 }
 
+.allSelect {
+  font-size: 16px;
+}
+
 .cartItem {
   display: flex;
   align-items: center;  /* 수직 정렬 */
@@ -23,7 +27,7 @@
   padding: 15px; /* 여백을 늘려서 깔끔하게 정리 */
   margin-bottom: 10px;
   border-radius: 8px;
-  background-color: #ffffff; /* 흰 배경으로 강조 */
+  background-color: #f9f9f9; /* 흰 배경으로 강조 */
 }
 
 .cartItem p {
@@ -31,12 +35,12 @@
   padding: 0;  /* 기본 패딩 제거 */
   text-align: left;
   flex-grow: 1;  /* 나머지 공간을 텍스트에 할당 */
-  font-size: 1rem; /* 텍스트 크기 통일 */
+  font-size: 16px; /* 텍스트 크기 통일 */
 }
 
 .cartItem p:nth-child(2),
 .cartItem p:nth-child(3) {
-  flex-basis: 30%;  /* 도서명과 수량의 너비를 30%로 설정 */
+  flex-basis: 40%;  /* 도서명과 수량의 너비를 30%로 설정 */
 }
 
 .cartItem p:nth-child(4) {
@@ -101,12 +105,13 @@
 .buySelectedButton,
 .buyAllButton {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   border: none;
   background-color: #898989;
   color: white;
   border-radius: 5px;
+  width: 100%;
 }
 
 .buySelectedButton:hover,
@@ -122,6 +127,7 @@
   background-color: #ff6f61;
   color: white;
   border: none;
+  border-radius: 5px;
   padding: 8px 16px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -140,10 +146,112 @@
 }
 
 .quantityInput {
-  width: 50px;
+  width: 30px;
   padding: 5px;
   margin-left: 10px;
   text-align: center;
   border-radius: 5px;
   border: 1px solid #ddd;
+}
+
+/* 793px 이하: 도서명은 체크박스 옆, 수량 & 가격은 한 줄 아래 */
+@media (max-width: 793px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .cartItem {
+    display: flex;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+  .allSelect,
+  .cartItem p {
+    font-size: 14px;
+  }
+  .emptyMessage,
+  .totalPrice {
+    font-size: 16px;
+  }
+  .buySelectedButton,
+  .buyAllButton {
+  font-size: 14px;
+  }
+  .deleteCartButton {
+    font-size: 12px;
+  }
+
+  .quantityInput {
+    width: 35px;
+    padding: 4px;
+  }
+}
+
+/* 520px 이하: 컨테이너 좌우 padding 줄이기 */
+@media (max-width: 520px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .cartItem {
+    padding: 10px;
+  }
+
+  .cartItem p {
+    font-size: 13px;
+  }
+
+  .quantityInput {
+    width: 30px;
+    font-size: 0.8rem;
+  }
+
+  .buySelectedButton, .buyAllButton {
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-top: 10px;
+  }
+
+  .totalPrice {
+    font-size: 16px;
+  }
+}
+
+/* 400px 이하: 더 작은 크기 적용 */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .cartItem {
+    padding: 8px;
+  }
+
+  .cartItem p {
+    font-size: 12px;
+  }
+
+  .quantityInput {
+    width: 28px;
+    font-size: 0.7rem;
+  }
+
+  .buySelectedButton, .buyAllButton {
+    font-size: 13px;
+    padding: 8px 12px;
+    margin-top: 8px;
+  }
+
+  .deleteCartButton {
+    padding: 5px 7px;
+  }
+
+  .totalPrice {
+    font-size: 14px;
+  }
 }

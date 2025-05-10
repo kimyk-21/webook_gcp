@@ -40,7 +40,7 @@ function SignUpPage() {
 
     try {
       const response = await axios.post(
-        'http://3.94.201.0:8080/api/Id_such', 
+        'https://swims.p-e.kr/api/Id_such', 
         email, 
         {
           headers: { 'Content-Type': 'text/plain' },
@@ -86,7 +86,7 @@ function SignUpPage() {
     }
 
     try {
-      await axios.post('http://3.94.201.0:8080/api/register', {
+      await axios.post('https://swims.p-e.kr/api/register', {
         userId: email,
         email,
         password,
@@ -120,7 +120,7 @@ function SignUpPage() {
 
   return (
     <div className={styles.signupContainer}>
-      <h2>회원가입</h2>
+      <h2 className={styles.title}>회원가입</h2>
 
       <div className={styles.inputContainer}>
         <input
@@ -128,6 +128,7 @@ function SignUpPage() {
           placeholder="이름"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className={styles.name}
         />
         {fieldErrors.name && <span className={styles.errorText}>{fieldErrors.name}</span>}
       </div>
@@ -138,10 +139,12 @@ function SignUpPage() {
             type="email"
             placeholder="이메일"
             value={email}
+            className={styles.email}
             onChange={(e) => {
               setEmail(e.target.value);
               setEmailChecked(false);
-            }}
+            }
+          }
           />
           <button onClick={checkEmailExists} className={styles.checkEmailButton}>
             중복 확인
@@ -156,6 +159,7 @@ function SignUpPage() {
           type="password"
           placeholder="비밀번호"
           value={password}
+          className={styles.password}
           onChange={(e) => setPassword(e.target.value)}
         />
         {fieldErrors.password && <span className={styles.errorText}>{fieldErrors.password}</span>}
@@ -166,6 +170,7 @@ function SignUpPage() {
           type="password"
           placeholder="비밀번호 확인"
           value={confirmPassword}
+          className={styles.password}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         {fieldErrors.passwordMatch && <span className={styles.errorText}>{fieldErrors.passwordMatch}</span>}
@@ -176,6 +181,7 @@ function SignUpPage() {
           type="text"
           placeholder="전화번호"
           value={phoneNumber}
+          className={styles.phoneNumber}
           onChange={handlePhoneNumberChange}
         />
         {fieldErrors.phoneNumber && <span className={styles.errorText}>{fieldErrors.phoneNumber}</span>}
@@ -186,6 +192,7 @@ function SignUpPage() {
           type="text"
           placeholder="주소"
           value={address}
+          className={styles.address}
           onChange={(e) => setAddress(e.target.value)}
         />
         {fieldErrors.address && <span className={styles.errorText}>{fieldErrors.address}</span>}
@@ -210,7 +217,7 @@ function SignUpPage() {
           placeholder="생년월일"
           value={birthDate}
           onChange={handleBirthDateChange}
-          className={styles.input}
+          className={styles.birthDate}
         />
         {fieldErrors.birthDate && <span className={styles.errorText}>{fieldErrors.birthDate}</span>}
       </div>
@@ -221,7 +228,7 @@ function SignUpPage() {
           placeholder="나이"
           value={age}
           onChange={handleAgeChange}  // 나이를 수정할 수 있게 처리
-          className={styles.input}
+          className={styles.age}
         />
         {fieldErrors.age && <span className={styles.errorText}>{fieldErrors.age}</span>}
       </div>

@@ -4,7 +4,7 @@ import axios from 'axios';
 import styles from './MemberInfoPage.module.css';
 import { AuthContext } from '../App';
 
-const BASE_URL = "http://3.94.201.0:8080"; // 백엔드 URL 맞게 설정 
+const BASE_URL = "https://swims.p-e.kr"; // 백엔드 URL 맞게 설정 
 
 const MemberInfoPage = () => {
   const navigate = useNavigate();
@@ -498,7 +498,7 @@ const createCoupon = async () => {
           )}
 
           <div className={styles.reviewsBox}>
-          <h3>작성한 댓글</h3>
+          <h3 className={styles.h3}>작성한 댓글</h3>
             {comments.length > 0 ? (
               <ul className={styles.infoList}>
                 {comments.map((comment) => (
@@ -507,7 +507,7 @@ const createCoupon = async () => {
                     onClick={() => handleCommentClick(comment.book.bookId)}  // 댓글 클릭 시 도서 상세로 이동
                     className={styles.commentItem}
                   >
-                    {comment.content}
+                    {comment.book.title}에 남긴 댓글: {comment.content}
                   </li>
                 ))}
               </ul>
@@ -517,7 +517,7 @@ const createCoupon = async () => {
           </div>
           
           <div className={styles.interestsBox}>
-            <h3>도서 관심 분야</h3>
+            <h3 className={styles.h3}>도서 관심 분야</h3>
               {interests.map((interest, index) => (
                 <div key={index} className={styles.interestItem}>
                   <span>{interest}</span>
@@ -539,11 +539,14 @@ const createCoupon = async () => {
             )}
           </div>
 
+          <div className={styles.buttons}>
           <button onClick={toggleEditing} className={styles.toggleButton}>
             {isEditing ? '수정 완료' : '정보 수정'}
           </button>
 
-          {isEditing && <button onClick={saveUserInfo} className={styles.toggleButton}>저장</button>}
+          {isEditing && <button onClick={saveUserInfo} className={styles.toggleButton}>
+            저장</button>}
+          </div>
         </div>
       ) : (
         <p>로딩 중...</p>

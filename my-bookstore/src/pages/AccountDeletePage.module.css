@@ -1,52 +1,124 @@
 .container {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
-  
-  .inputContainer {
-    margin-bottom: 20px;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box; /* 패딩과 테두리를 포함하여 전체 크기 계산 */
-  }
-  
-  .error {
-    color: #e53e3e;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .deleteButton {
-    width: 100%;
-    padding: 10px;
-    background-color: #898989;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .deleteButton:hover {
-    background-color: #555;
-  }
-  
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.inputContainer {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* 패딩과 테두리를 포함하여 전체 크기 계산 */
+}
+
+.message {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.deleteButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #898989;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #555;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 520px) {
+.container {
+  width: 90%; /* 화면 크기에 맞춰 자동 조정 */
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 15px;
+}
+
+.input {
+  font-size: 13px; /* 작은 화면에서 입력 필드 폰트 크기 조정 */
+  padding: 8px;
+}
+
+.message {
+  font-size: 16px;
+}
+
+.error {
+  font-size: 13px;
+}
+
+.deleteButton {
+  font-size: 15px;
+  padding: 8px;
+}
+
+.linkContainer {
+  font-size: 13px;
+}
+}
+
+@media (max-width: 400px) {
+.container {
+  width: 95%;
+  max-width: 300px;
+  padding: 10px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.input {
+  font-size: 12px;
+  padding: 6px;
+}
+
+.message {
+  font-size: 14px;
+}
+
+.error {
+  font-size: 12px;
+}
+
+.deleteButton {
+  font-size: 13px;
+  padding: 7px;
+}
+
+.linkText {
+  font-size: 12px;
+}
+}

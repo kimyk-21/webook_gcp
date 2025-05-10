@@ -47,9 +47,9 @@ const AccountDeletePage = () => {
 
   return (
     <div className={styles.container}>
-      <h2>회원 탈퇴</h2>
+      <h2 className={styles.title}>회원 탈퇴</h2>
       <div className={styles.inputContainer}>
-        <label>비밀번호를 입력하세요:</label>
+        <label className={styles.message}>비밀번호를 입력하세요:</label>
         <input
           type="password"
           value={password}

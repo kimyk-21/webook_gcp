@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./OrderHistoryPage.module.css";
 import { AuthContext } from "../App"; // AuthContext 가져오기
 
-const BASE_URL = "http://3.94.201.0:8080"; 
+const BASE_URL = "https://swims.p-e.kr"; 
 
 const OrderHistoryPage = () => {
   const [orders, setOrders] = useState([]);
@@ -67,8 +67,8 @@ const OrderHistoryPage = () => {
             }
           })
         );           
-        console.log("전체 주문 데이터:", JSON.stringify(response.data, null, 2));
-        console.log("첫 번째 주문의 orderItems:", JSON.stringify(response.data[0]?.orderItems, null, 2));
+        //console.log("전체 주문 데이터:", JSON.stringify(response.data, null, 2));
+        //console.log("첫 번째 주문의 orderItems:", JSON.stringify(response.data[0]?.orderItems, null, 2));
         setOrders(updatedOrders);
       } catch (error) {
         console.error("주문 내역을 불러오는 중 오류 발생:", error);
