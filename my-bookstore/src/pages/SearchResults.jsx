@@ -3,8 +3,8 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./SearchResults.module.css";
 
-const BASE_URL = "https://swims.p-e.kr";
-const RATING_URL = "https://swims.p-e.kr/ratings/average"; // 평점 평균 API
+const BASE_URL = "https://34-64-72-234.nip.io";
+const RATING_URL = "https://34-64-72-234.nip.io/ratings/average"; // 평점 평균 API
 
 const SearchResults = () => {
   const [userInfo, setUserInfo] = useState(null); // 사용자 정보 상태 추가

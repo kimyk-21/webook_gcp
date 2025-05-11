@@ -4,6 +4,8 @@ import { AuthContext } from '../App'; // AuthContext 가져오기
 import axios from 'axios';
 import styles from './AccountDeletePage.module.css';
 
+const BASE_URL = "https://34-64-72-234.nip.io";
+
 const AccountDeletePage = () => {
   const { setIsAuthenticated } = useContext(AuthContext);
   const [password, setPassword] = useState('');
@@ -25,7 +27,7 @@ const AccountDeletePage = () => {
       }
 
       // DELETE 요청을 보낼 때, 비밀번호를 요청 본문에 포함
-      const response = await axios.delete(`/member/MyPage/${userId}`, {
+      const response = await axios.delete(`${BASE_URL}/member/MyPage/${userId}`, {
         params: { password }, // 쿼리 파라미터로 비밀번호 전달
       });
 

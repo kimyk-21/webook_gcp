@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './FindPasswordPage.module.css';
 
+const BASE_URL = "https://34-64-72-234.nip.io";
+
 function FindPasswordPage() {
   const [email, setEmail] = useState('');
   const [code, setCode] = useState('');
@@ -17,7 +19,7 @@ function FindPasswordPage() {
     }
     try {
       const response = await axios.post(
-        'https://swims.p-e.kr/api/password_such',
+        `${BASE_URL}/api/password_such`,
         null,
         { params: { email } }
       );
@@ -38,7 +40,7 @@ function FindPasswordPage() {
     }
     try {
       const response = await axios.post(
-        'https://swims.p-e.kr/api/verify-code',
+        `${BASE_URL}/api/verify-code`,
         null,
         { params: { email, authenticationCode: code } }
       );

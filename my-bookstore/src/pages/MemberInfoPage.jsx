@@ -4,7 +4,7 @@ import axios from 'axios';
 import styles from './MemberInfoPage.module.css';
 import { AuthContext } from '../App';
 
-const BASE_URL = "https://swims.p-e.kr"; // 백엔드 URL 맞게 설정 
+const BASE_URL = "https://34-64-72-234.nip.io"; // 백엔드 URL 맞게 설정 
 
 const MemberInfoPage = () => {
   const navigate = useNavigate();

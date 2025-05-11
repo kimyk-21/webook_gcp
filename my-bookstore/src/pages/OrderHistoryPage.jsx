@@ -4,7 +4,7 @@ import axios from "axios";
 import styles from "./OrderHistoryPage.module.css";
 import { AuthContext } from "../App"; // AuthContext 가져오기
 
-const BASE_URL = "https://swims.p-e.kr"; 
+const BASE_URL = "https://34-64-72-234.nip.io"; 
 
 const OrderHistoryPage = () => {
   const [orders, setOrders] = useState([]);

@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../App"; // AuthContext 가져오기
 import styles from "./BookDetailPage.module.css";
 
-const BASE_URL = "https://swims.p-e.kr"; 
+const BASE_URL = "https://34-64-72-234.nip.io"; 
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -207,7 +207,7 @@ const BookDetailPage = () => {
     <div className={styles.container}>
       <h2>{book.title}</h2>
       <img 
-        src={`https://swims.p-e.kr${book.imageUrl}`} 
+        src={`https://34-64-72-234.nip.io${book.imageUrl}`} 
         alt={book.title} 
         className={styles.bookImage} 
         onError={(e) => e.target.src = "/fallback-image.jpg"} // 기본 이미지 표시

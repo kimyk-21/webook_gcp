@@ -4,7 +4,7 @@ import { AuthContext } from "../App";
 import axios from 'axios';
 import styles from "./Header.module.css";
 
-const BASE_URL = "https://swims.p-e.kr"; // 백엔드 URL 맞게 설정
+const BASE_URL = "https://34-64-72-234.nip.io"; // 백엔드 URL 맞게 설정
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated, userInfo } = useContext(AuthContext);

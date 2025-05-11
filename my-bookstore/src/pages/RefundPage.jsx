@@ -4,6 +4,8 @@ import { AuthContext } from "../App";
 import axios from 'axios';
 import styles from './RefundPage.module.css';
 
+const BASE_URL = "https://34-64-72-234.nip.io";
+
 const RefundPage = () => {
   const { id } = useParams(); // URL에서 주문 ID 가져오기
   const [message, setMessage] = useState(''); // 메시지 상태
@@ -17,7 +19,7 @@ const RefundPage = () => {
     try {
       // 환불 요청을 백엔드로 전송
       const response = await axios.post(
-        '/payments/refund_process',
+        `${BASE_URL}/payments/refund_process`,
         null, // 본문에 추가할 데이터가 없으므로 null
         {
           params: {

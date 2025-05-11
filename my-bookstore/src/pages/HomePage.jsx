@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./HomePage.module.css";
 
-const BASE_URL = "https://swims.p-e.kr/api/books"; // 백엔드 API 주소
-const RATING_URL = "https://swims.p-e.kr/ratings/average"; // 평점 평균 API 주소
+const BASE_URL = "https://34-64-72-234.nip.io/api/books"; // 백엔드 API 주소
+const RATING_URL = "https://34-64-72-234.nip.io/ratings/average"; // 평점 평균 API 주소
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ const HomePage = () => {
                 >
                   {/* 도서 이미지 */}
                   <img 
-                    src={`https://swims.p-e.kr${book.imageUrl}`} 
+                    src={`https://34-64-72-234.nip.io${book.imageUrl}`} 
                     alt={book.title} 
                     className={styles.bookImage} 
                     onError={(e) => e.target.src = "/fallback-image.jpg"} 

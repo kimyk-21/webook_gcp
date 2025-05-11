@@ -4,6 +4,8 @@ import { AuthContext } from "../App";
 import axios from 'axios';
 import styles from "./LoginPage.module.css";
 
+const BASE_URL = "https://34-64-72-234.nip.io";
+
 const LoginPage = () => {
   const { setIsAuthenticated, setUserInfo } = useContext(AuthContext);
   const [userId, setUserId] = useState("");
@@ -17,7 +19,7 @@ const LoginPage = () => {
     console.log("로그인 시 비밀번호:", password);
 
     try {
-      const response = await axios.post("https://swims.p-e.kr/api/login", {
+      const response = await axios.post(`${BASE_URL}/api/login`, {
         userId,
         password,
       });
@@ -30,7 +32,7 @@ const LoginPage = () => {
         localStorage.setItem("loggedInUserId", userId);
 
         // 사용자 정보 조회
-        const userInfoResponse = await axios.post("/api/infofind", null, {
+        const userInfoResponse = await axios.post(`${BASE_URL}/api/infofind`, null, {
           params: { userId },
         });
 

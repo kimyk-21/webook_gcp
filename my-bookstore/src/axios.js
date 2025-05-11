@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://swims.p-e.kr", // 백엔드 주소
+  baseURL: "https://34-64-72-234.nip.io", // 백엔드 주소
   withCredentials: true, // 쿠키 자동 포함
 });
 

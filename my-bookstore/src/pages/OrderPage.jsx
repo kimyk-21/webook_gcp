@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./OrderPage.module.css";
 
-const BASE_URL = "https://swims.p-e.kr"
+const BASE_URL = "https://34-64-72-234.nip.io"
 
 const OrderPage = () => {
   const location = useLocation();
