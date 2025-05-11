@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site":"webook-gcp",
     "public": "./my-bookstore/build",
     "ignore": [
       "firebase.json",
