@@ -2,10 +2,9 @@
   padding: 20px;
   padding-left: 100px;
   padding-right: 100px;
-  border: 1px solid #ddd; /* 통일된 테두리 색상 */
+  border: 1px solid #fff; /* 통일된 테두리 색상 */
   border-radius: 10px;
   background-color: #fff; /* 일관된 배경 색상 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   min-height: 100vh;
   font-family: 'Arial', sans-serif; /* 폰트 통일 */
 }
@@ -140,4 +139,76 @@
 
 .deleteButton:hover {
   background-color: #ff1a1a;
+}
+  /* 반응형 스타일 */
+  @media (max-width: 720px) {
+    .container {
+      width: 80%; /* 화면 크기에 맞춰 자동 조정 */
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+  
+    .input {
+      font-size: 14px; /* 작은 화면에서 입력 필드 폰트 크기 조정 */
+      padding: 10px;
+    }
+  
+    .button {
+      font-size: 15px;
+      padding: 9px;
+    }
+  
+    .linkContainer {
+      font-size: 14px;
+    }
+  }
+
+@media (max-width: 520px) {
+  .container {
+    width: 90%; /* 화면 크기에 맞춰 자동 조정 */
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .input {
+    font-size: 13px; /* 작은 화면에서 입력 필드 폰트 크기 조정 */
+    padding: 8px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .linkContainer {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .button {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .linkText {
+    font-size: 12px;
+  }
 }
