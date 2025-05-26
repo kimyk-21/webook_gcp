@@ -109,28 +109,36 @@ const OrderHistoryPage = () => {
         
           return (
             <div key={order.id} className={styles.purchaseCard}>
-              <h3 className={styles.bookTitle}>주문 번호: {order.id}</h3>
-              <p>구매일: {new Date(order.orderDate).toISOString().split("T")[0]}</p>
+              <h3 className={styles.bookTitle}>{new Date(order.orderDate).toISOString().split("T")[0]} (주문 번호: {order.id})</h3>
+              {/* <p>구매일: {new Date(order.orderDate).toISOString().split("T")[0]}</p> */}
+              <hr></hr>
+              <p>
+                배송 상태:{" "}
+                <span className={styles.status}>{order.deliveryStatus} </span>
+                <span>({order.trackingNumber})</span>
+              </p>
 
+              <hr></hr>
+
+              <div className={styles.bookInfo}>
               {/* 주문한 책 정보 표시 */}
               {items.length > 0 ? ( //현재 order_items 불러올 수 있는 방법 없음
                 items.map((item, index) => (
-                  <div key={index} className={styles.bookInfo}>
+                  <div key={index}>
                     <p>{item.bookTitle || "제목 없음"}</p>
-                    <p>구매 수량: {item.quantity || 1}개</p>
-                    <p>개당 가격: {item.price ? `${item.price.toLocaleString()}원` : "정보 없음"}</p>
+                    <p>수량: {item.quantity || 1}개</p>
+                    <p>주문 금액: {" "}
+                      {item.price ? `${(item.price * (item.quantity || 1)).toLocaleString()}원` : "정보 없음"}</p>
+                  <hr></hr>
                   </div>
                 ))
               ) : (
                 <p>주문한 책 정보를 불러오지 못했습니다.</p>
               )}
 
-              <p>총 금액: {order.discountedAmount.toLocaleString()}원</p>
-              <p>
-                배송 상태:{" "}
-                <span className={styles.status}>{order.deliveryStatus}</span>
-              </p>
-              <p>배송 추적번호: {order.trackingNumber}</p>
+              <p>결제 금액: {order.discountedAmount.toLocaleString()}원</p>
+              </div>
+
               <p>
                 환불 상태:{" "}
                 <span

@@ -103,21 +103,27 @@ const OrderPage = () => {
     return totalPrice;
   }; 
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleOrderSubmit = async (e) => {
     e.preventDefault();
   
+    if (isSubmitting) return; // 중복 요청 방지
+    setIsSubmitting(true);
+  
     if (!userData || !userData.id) {
       alert("로그인이 필요합니다.");
+      setIsSubmitting(false);
       return;
     }
   
     if (selectedCoupon && calculateTotalPrice() < selectedCoupon.minOrderAmount) {
       alert(`쿠폰을 사용하려면 최소 ${selectedCoupon.minOrderAmount}원 이상 주문해야 합니다.`);
+      setIsSubmitting(false);
       return;
     }
     
     try {
-      // 1️⃣ 주문 생성 요청
       const orderResponse = await axios.post(
         `${BASE_URL}/orders/create`,
         {
@@ -128,21 +134,21 @@ const OrderPage = () => {
             quantity: item.quantity,
           })),
           //receiver: receiver,  // 받는 사람
-          address: address,    // 주소 추가
+          address: address,
         },
         { params: { userId: userData.id }, withCredentials: true }
-      );
+      );  
   
       // orderResponse.data가 문자열이라면 JSON으로 변환
       let orderData = orderResponse.data;
-  
       if (typeof orderData === "string") {
         try {
-          orderData = orderData.replace(/,\s*"genres":\s*\]}/g, '}'); // 빈 genres 배열 잘못된 부분 제거
+          orderData = orderData.replace(/,\s*"genres":\s*\]}/g, '}');
           orderData = JSON.parse(orderData);
         } catch (error) {
           console.error("❌ JSON 파싱 오류:", error);
-          orderData = null; // 파싱 실패 시 null 처리
+          setIsSubmitting(false);
+          return;
         }
       }
   
@@ -154,7 +160,7 @@ const OrderPage = () => {
       // 2️⃣ 결제 요청
       const paymentResponse = await axios.post(
         `${BASE_URL}/payments/pay_process`,
-        null, // Request Body 없음 (모든 데이터는 쿼리 파라미터로 전달됨)
+        null,
         {
           params: {
             orderId,
@@ -172,8 +178,10 @@ const OrderPage = () => {
     } catch (error) {
       console.error("결제 실패:", error.response?.data || error.message);
       setPaymentStatus("결제 실패. 다시 시도해주세요.");
+    } finally {
+      setIsSubmitting(false);
     }
-  };  
+  };
   
 
   if (!userData) {

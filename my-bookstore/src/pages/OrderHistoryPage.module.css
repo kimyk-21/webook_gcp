@@ -36,6 +36,7 @@
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 10px;
+  margin-top: 0px;
   text-align: left;
   font-weight: bold; /* 제목에 강조 효과 */
 }
@@ -46,9 +47,17 @@
   color: #555; /* 본문 색상 */
 }
 
+.bookInfo p {
+  text-align: left;
+  margin: 5px 0;
+  color: #333;
+  font-weight: bold;
+}
+
 .status {
   font-weight: bold;
   color: #4a90e2; /* 상태 색상 통일 */
+  margin-bottom: 5px;
 }
 
 .refundable {
@@ -67,9 +76,9 @@
   border: none;
   padding: 10px 20px;
   border-radius: 5px; /* 버튼의 둥근 모서리 */
-  font-size: 1rem; /* 버튼 폰트 크기 통일 */
+  font-size: 0.9rem; /* 버튼 폰트 크기 통일 */
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .refundButton:hover {
